@@ -1,0 +1,66 @@
+/* global.css contains global styles for the whole project */
+
+:root {
+    /* base website font */
+    font-size: 21px;
+    font-family: sans-serif;
+    
+    /* global website colors */
+    --primary: #040F2B;
+    --primary-gradient: linear-gradient(to bottom right, #1AC9D9, #5F1AD9);
+    --black: #25272D;
+    --black-75: #5C5E61;
+    --black-50: #939496;
+    --black-25: #C8C9CA;
+    --black-10: #EAEAEA;
+    --black-5: #F4F4F4;
+    --error: #D91A48;
+    --nav-color: #171717;
+
+    /* typography */
+    --h1: 80px;
+    --h2: 64px;
+    --h3: 51px;
+    --h4: 41px;
+    --h5: 33px;
+    --h6: 26px;
+
+    /* occasional colors */
+    --text-highlight: #69EADB;
+    --white: #ffffff;
+    --bg-video-filter: rgba(4, 16, 35, 0.65);
+    --bg-showcase: #040915;
+    --bg-about: #DBE9F3;
+    --bg-blurred: rgba(148,148,148, 50);
+    --bg-blurred-dark: rgba(42, 45, 52, 40);
+    --bg-testimonials-linear: linear-gradient(to right, #000428 0%, #07274F 33%, #07274F 66%, #001F39 100%);
+    --bg-testimonials-radial: radial-gradient(circle, #000428 0%, #07274F 21%, #07274F 52%, #001F39 76%);
+    --photo-timer-line: #FFA600;
+    --tag-bg: #10244F;
+
+    --nav-height: 64px;
+    --footer-height: 160px;
+}
+
+* { 
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: var(--footer-height);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

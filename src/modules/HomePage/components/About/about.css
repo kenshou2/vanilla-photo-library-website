@@ -1,0 +1,88 @@
+/*
+
+TODO
+Fix issue with .about-features where some items are overflowing the padding parameter
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.about-container {
+    width: 100%;
+    min-height: 928px;
+    padding: 53px 32px;
+}
+
+.about-content {
+    height: 839px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 839px;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.about-text {
+    grid-area: 1 / 1 / 1 / 5;
+    z-index: 1;
+    padding: 0 14px 53px 14px;
+    padding-right: 20px;
+
+    text-align: right;
+}
+
+.header {
+    font-size: var(--h1);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.sub-header {
+    width: 70%;
+    margin: 32px 0 0 auto;
+
+    font-size: 24px;
+    color: var(--black);
+}
+
+.about-profile {
+    grid-area: 1 / 4 / 3 / 6;
+    display: flex;
+    position: relative;
+
+    background:        
+        url('../../../../assets/images/element-decorations/about-bg.png') top left / cover no-repeat;
+}
+
+.learn-more-cta {
+    position: absolute;
+    bottom: 0; left: 0;
+    margin: 0 18px;
+}
+
+.about-features {
+    grid-area: 2 / 1 / 2 / 4;
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 0 146px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* flex: 1 1 0; */
+}
+
+.feature .numeric {
+    font-size: var(--h2);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.feature .description {
+    font-size: 26px;
+    color: var(--black);
+}

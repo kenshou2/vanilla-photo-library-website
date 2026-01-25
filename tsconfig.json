@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          // Target ECMAScript 6 or later (ESNext for future-proofing)
+    "module": "ESNext",                       // Use ES Modules for tree-shaking and compatibility with bundlers
+    "moduleResolution": "node",               // Resolve modules like Node.js does
+    "strict": true,                           // Enable strict type checking
+    "esModuleInterop": true,                  // Enable interop between ES modules and CommonJS modules
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file name casing
+    "skipLibCheck": true,                     // Skip type checking of library files for faster builds
+    "noImplicitAny": true,                    // Avoid implicit `any` types
+    "noUnusedLocals": true,                   // Error on unused local variables
+    "noUnusedParameters": true,               // Error on unused function parameters
+    "noImplicitReturns": true,                // Ensure all code paths return a value
+    "noFallthroughCasesInSwitch": true,       // Prevent fallthrough in switch statements
+    "resolveJsonModule": true,                // Allow importing .json files
+    "outDir": "./dist",                       // Output directory for compiled files
+    "rootDir": "./src",                       // Root directory of source files
+    "declaration": false,                      // Generate declaration (.d.ts) files
+    "sourceMap": true,                        // Generate source maps for debugging
+    "incremental": true,                      // Enable incremental compilation for faster builds
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": ["src/**/*"],                     // Include all source files in the src folder
+  "exclude": ["node_modules", "dist"]          // Exclude node_modules and output directory
+}

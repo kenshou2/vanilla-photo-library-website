@@ -1,0 +1,166 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.form-container {
+    max-width: 40%;
+    margin: 93px auto 0;
+    color: var(--primary);
+}
+
+.description {
+    text-align: center;
+}
+
+.heading {
+    font-size: var(--h3);
+}
+
+.sub-heading {
+    font: 26px;
+}
+
+.form-area {
+    display: flex;
+    gap: 15%;
+    margin-top: 46px;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 15%;
+    width: 100%;
+}
+.form-row > * {
+    flex-grow: 1;
+}
+
+input, textarea, label {
+    width: 100%;
+    cursor: pointer;
+}
+
+input, textarea {
+    margin-block: 10px;
+    min-height: 35px;
+    border: 2px solid var(--black-50);
+    border-radius: 11px;
+    font-size: 15px;
+    padding: 5px 10px;
+    color: var(--black);
+}
+
+textarea {
+    min-height: 150px;
+    padding: 15px;
+    resize: none;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+    margin-top: 15px;
+    padding: 0 15px;
+}
+
+/* THIS IS A CUSTOM CHECKMARK */
+
+.option {
+    position: relative;
+    padding-left: 22px;
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    border: 1.5px solid var(--black);
+    border-radius: 4px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.option input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.option .checkmark:after {
+    left: 3px;
+    top: 6px;
+    width: 5px;
+    height: 8px;
+    border: solid var(--black);
+    border-width: 0px 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg) translate(-50%, -50%);
+}
+
+/* -------------------------- */
+
+.option, .option input {
+    width: auto;
+    min-height: auto;
+}
+
+.send-form-button {
+    background-color: var(--primary);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    color: var(--black-5);
+    min-height: 51px;
+    margin: 25px 0;
+}
+
+.social-media-header {
+    margin: 0 0 21px 0;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.socials-icon {
+    fill: var(--primary);
+    height: 32px;
+}

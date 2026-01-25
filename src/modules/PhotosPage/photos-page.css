@@ -1,0 +1,146 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.photos-page-container {
+    padding: 221px 32px 32px;
+}
+
+.search-options {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar-container {
+    --search-bar-height: 64px;
+    --border-radius: 30px;
+    --search-icon-width: 50px;
+
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 922px;
+    height: 48px;
+    align-items: center;    
+}
+
+.search-bar {
+    width: inherit;
+    height: inherit;
+    background-color: var(--black-10);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0 32px;
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--black);    
+    outline: none;
+    z-index: 2;
+}
+.search-bar::-webkit-search-cancel-button {
+    margin-right: var(--search-icon-width);
+    width: 50px;
+    height: 50px;
+    background-color: var(--black-50);
+}
+.search-bar::placeholder {
+    color: var(--black-25);
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50;
+    right: 0;
+    padding-right: 16px;
+    z-index: 2;
+}
+
+.search-icon {
+    fill: var(--black-25);
+    width: var(--search-icon-width);
+    height: 35px;
+}
+
+.search-suggestions {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    padding: calc(var(--search-bar-height) + 10px) 10px 10px;    
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: calc(var(--search-bar-height) * 2);
+    background-color: whitesmoke;
+    border-radius: var(--border-radius);
+    z-index: 1;
+}
+
+.suggestion {
+    background-color: transparent;
+    min-height: var(--search-bar-height);
+    width: 100%;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    padding: 15px 25px;    
+    font-size: 18px;
+    font-weight: 500;
+}
+.suggestion:hover {
+    background-color: var(--black-10);
+}
+
+.hidden {
+    display: none;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 922px;
+    min-height: 29px;
+    margin-top: 43px;
+    background-color: #fff;
+}
+
+.filter-option {
+    outline: 2px solid var(--black-25);
+    border-radius: 10px;
+    padding: 7px 28px;
+    text-align: center;
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 600;
+    user-select: none;
+}
+
+.filter-option:has(input[type='checkbox']:checked) {
+    background: var(--primary-gradient);
+    color: var(--black-5);
+    outline: none;
+}
+
+.filter-option input[type='checkbox'] {
+    display: none;
+}
+
+.photo-cards {
+    margin-top: 60px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}

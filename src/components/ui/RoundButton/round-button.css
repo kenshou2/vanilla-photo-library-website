@@ -1,0 +1,26 @@
+@keyframes shiftBg {
+    from {background-position: left;}
+    to {background-position: right;}
+}
+
+.round-button {
+    background-image: var(--primary-gradient);
+    border-radius: 100px;
+    border: none;
+    color: var(--black-5);    
+    font-weight: bold;
+}
+
+.round-button:hover {
+    cursor: pointer;
+}
+
+.outline {
+    background: url('../../../assets/gradients/border.png') center / contain no-repeat;
+}
+
+.iridescent {
+    background-size: 500%;
+    background-image: radial-gradient(circle, #1AC9D9, #5F1AD9);
+    animation: shiftBg 4s infinite alternate linear;
+}

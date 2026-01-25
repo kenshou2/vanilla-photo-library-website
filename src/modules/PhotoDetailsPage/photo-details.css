@@ -1,0 +1,223 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+@keyframes playback {
+   from {width: 0;}
+   to {width: calc(100% - 16px);}
+}
+
+.photo-details-page-container {
+    width: 100%;
+    padding: 67px 36px;
+}
+
+.photo-showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    --grid-aside: 20px;
+}
+
+.photo-name {
+    font-size: var(--h4);
+    color: var(--black);
+    margin: 0 0 20px 0;
+}
+
+.photo-description {    
+    color: var(--black-50);
+    margin: 20px 0;
+}
+
+.main-content {
+    display: flex;
+    gap: 10%;
+}
+
+.showcase-area {
+    flex-basis: 0;
+    flex-grow: 3;
+}
+
+.photo-details {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    --grid-aside: 1fr;
+    gap: 5px;
+    aspect-ratio: 16 / 9;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    overflow: hidden;
+    transition: outline-color 0.2s linear;
+    border-radius: 15px;
+    outline-color: transparent;
+    cursor: pointer;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.photo.aside:hover {
+    outline: 4px solid var(--black-50);
+}
+
+.photo.main {
+    position: relative;
+    border-radius: 25px;
+}
+.photo.main::before {
+    content: '';
+    height: 8px;
+    position: absolute;
+    bottom: 5px; left: 8px;
+    background: var(--primary-gradient);
+    border-radius: 0 0 15px 15px;
+    animation: playback 10s linear;
+    z-index: 1;
+}
+.photo.main::after {
+    content: '';
+    height: 8px;
+    position: absolute;
+    bottom: 5px; left: 8px;
+    width: calc(100% - 16px);
+    background-color: var(--black-25);
+    border-radius: 0 0 15px 15px;
+    z-index: 0;
+}
+
+.one {
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+.two {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.three {
+    grid-area: 2 / 2 / 3 / 3;
+}
+.four {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.main:has(.expand-photo) {
+    position: static;
+}
+.main:has(.expand-photo)::before {
+    animation-play-state: paused;
+    visibility: hidden;
+}
+
+.expand-photo {
+    position: absolute;    
+    top: calc(var(--nav-height) + 20px);
+    left: 2%;
+    width: calc(100% - 4%) !important;
+    height: calc(100% - var(--nav-height) - var(--footer-height) - 40px) !important;
+    z-index: 100;
+}
+
+.photo-utils {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0 8px;
+    height: 22px;
+}
+
+.tag {
+    background-color: #10244F;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--black-5);
+    border-radius: 33px;
+    padding: 5px 10px;
+    user-select: none;
+}
+
+.expand-button {
+    margin-right: calc(25% + 20px);
+    border: none;
+    background: var(--primary-gradient);
+    border-radius: 8px;
+    width: 154px;
+    height: 49px;
+    color: var(--black-5);
+    font-size: 17px;    
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.detail:not(:first-child) {
+    margin-top: 12px;
+}
+
+.detail-label {
+    height: 51px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 12px;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+.detail-label span {
+    margin: 0 auto;    
+    color: var(--black-5);
+}
+
+.detail-text {    
+    border-radius: 0 0 12px 12px;    
+    font-size: 17px;
+    color: var(--black);
+
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .22s linear, box-shadow 0.15s linear;
+    padding: 30px 15px 15px;
+    margin: -15px 5px 0;
+}
+.detail-text > div {
+    overflow: hidden;
+}
+
+.expand-content {
+    grid-template-rows: 1fr;
+    box-shadow: 0 4px 6.2px rgba(0, 0, 0, 25%);
+}
+
+.detail-text ul {
+    margin: 0;
+    /* padding: 0; */
+}
+
+.disclaimer {
+    color: var(--black-50);
+    font-size: 14px;
+    text-align: right;
+}

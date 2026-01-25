@@ -1,0 +1,43 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.hero-mirror-container {
+    width: 100%;
+    min-height: 639px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 102px 0;
+}
+
+.cta-message {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.heading {
+    font-size: var(--h1);
+    font-weight: bold;
+    color: var(--black);
+    margin: 10px 0;
+    text-align: center;
+}
+
+.sub-heading {
+    font-size: var(--h6);
+    color: var(--black-75);
+    text-align: center;
+    font-weight: normal;
+}
+
+.cta-buttons {
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,1 @@
+This static website uses vanilla technologies such as HTML, CSS and TS to achieve a framework-like behavior, such as SPA routing and component-based architecture. 
